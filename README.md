@@ -7,7 +7,7 @@ Template script in python, for create a Viper Module in Swift only type
 - Takeshi$ python Viper.py -n YourModuleName
 - And Thats it
 
-It Create a Folder With the next Structure
+It Create a Folder With the bellow Structure
 - YourModuleName
 	- Logic
     	- Interactor
