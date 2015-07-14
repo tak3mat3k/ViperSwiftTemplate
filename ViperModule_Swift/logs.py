@@ -1,0 +1,6 @@
+
+def LOG_ERROR(STRING):
+	print " - ERROR :", STRING
+
+def LOG_WARNING(WARNING):
+	print " - WARNING :", WARNING
