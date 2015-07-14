@@ -31,12 +31,12 @@ class Property(object):
 	
 	@classmethod
 	def var(self, interface_or_class, name, optional=False):
-		optional = '!'
+		optional = '?'
 		return "\tvar %s:%s%s" % (name, interface_or_class, optional)
 
 	@classmethod
 	def let(self, interface_or_class, name, optional=False):
-		optional = '!'
+		optional = '?'
 		return "\tlet %s:%s%s" % (name, interface_or_class, optional)
 
 	@classmethod

@@ -14,10 +14,10 @@ class VIPERView_Interface(ViperClass_Interface):
 class VIPERView_h(ViperClass):
 	
 	def fName(self):
-		return "View.swift"
+		return "ViewController.swift"
 
 	def cName(self):
-		return "View"
+		return "ViewController"
 
 	def folderPath(self):
 		return self.folder.path_module_ui_view
@@ -40,7 +40,7 @@ class VIPERView(ViperClass):
 
  		self.view_h = VIPERView_h(self.module_name, self.folder)
 
-		self.view_h.addInterface("UIView")
+		self.view_h.addInterface("UIViewController")
 		self.view_h.addInterface(self.view_interface.className())
 
 		prt_view_presenter = Property.var(self.viperPresenter.presenter_interface.className(), "presenter")
