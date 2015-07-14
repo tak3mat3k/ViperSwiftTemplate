@@ -14,7 +14,6 @@ It Create a Folder With the next Structure
         	- YourModuleNameInteractor.swift
     - Module
     	- YourModuleNameInteractorInputInterface.swift
-        - 
     - UI
     	- Presenter
         	- YourModuleNamePresenter.swift
