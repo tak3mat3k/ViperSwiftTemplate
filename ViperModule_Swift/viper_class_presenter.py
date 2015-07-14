@@ -3,10 +3,10 @@ from viper_class_base import *
 class VIPERPresenter_Interface(ViperClass_Interface):
 
 	def fName(self):
-		return "Presenter_Interface.h"
+		return "PresenterInterface.swift"
 
 	def cName(self):
-		return "Presenter_Interface"
+		return "PresenterInterface"
 
 	def folderPath(self):
 		return self.folder.path_module_module
@@ -14,7 +14,7 @@ class VIPERPresenter_Interface(ViperClass_Interface):
 class VIPERPresenter_h(ViperClass):
 	
 	def fName(self):
-		return "Presenter.h"
+		return "Presenter.swift"
 
 	def cName(self):
 		return "Presenter"
@@ -48,15 +48,14 @@ class VIPERPresenter(ViperClass):
 	def prepare(self, interactor=None, wireframe=None):
 
 		if self.viperInteractor == None:
+
 			self.viperInteractor = interactor
 
 			self.presenter_interface = VIPERPresenter_Interface(self.module_name, self.folder)
 
 			self.presenter_h = VIPERPresenter_h(self.module_name, self.folder)
 
-			self.presenter_h.addImports(self.viperInteractor.interactor_Input.fileName())
-			self.presenter_h.addImports(self.presenter_interface.fileName())
-
+		
 			self.presenter_h.addInterface(self.viperInteractor.interactor_Output.className())
 			self.presenter_h.addInterface(self.presenter_interface.className())
 
@@ -66,9 +65,8 @@ class VIPERPresenter(ViperClass):
 			self.presenter_m = VIPERPresenter_m(self.module_name, self.folder, self.presenter_h)
 
 		if self.viperWireframe == None and wireframe != None:
-			self.viperWireframe = wireframe
 
-			self.presenter_h.addImports(self.viperWireframe.wireframe_h.fileName())
+			self.viperWireframe = wireframe
 
 			self.presenter_h.addProtocol(self.viperWireframe.viperView.view_interface.className())
 

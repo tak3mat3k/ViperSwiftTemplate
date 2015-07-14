@@ -3,7 +3,7 @@ from viper_class_base import *
 class VIPERLoadModule_h(ViperClass):
 	
 	def fName(self):
-		return "LoadModule.h"
+		return "LoadModule.swift"
 
 	def cName(self):
 		return "LoadModule"
@@ -34,22 +34,39 @@ class VIPERLoadModule(ViperClass):
 		presenter_class = presenter.presenter_h
 		wireframe_class = wireframe.wireframe_h
 
-		load_h.addImports(interactor_class.fileName())
-		load_h.addImports(presenter_class.fileName())
-		load_h.addImports(wireframe_class.fileName())
+		str_interactor = "interactor"
+		str_presenter = "presenter"
+		str_wireframe = "wireframe"
 
-		prt_interactor = Property.nonatomic_strong_class(interactor_class.className()) + "interactor;"
-		prt_presenter = Property.nonatomic_strong_class(presenter_class.className()) + "presenter;"
-		prt_wireframe = Property.nonatomic_strong_class(wireframe_class.className()) + "wireframe;"
+		prt_interactor = Property.let(interactor_class.className(), str_interactor, False)
+		prt_presenter = Property.let(presenter_class.className(), str_presenter, False)
+		prt_wireframe = Property.let(wireframe_class.className(), str_wireframe, False)
 
 		load_h.addProperty(prt_interactor)
 		load_h.addProperty(prt_presenter)
 		load_h.addProperty(prt_wireframe)
 
-		load_h.create()
+		hardCodedMethodLoadModule = "\tclass func loadModule() -> " + load_h.className() + " {\n\n" \
+		"\t\tlet " + str_interactor + " = " + interactor_class.className() + "()\n" \
+		"\t\tlet " + str_presenter + " = " + presenter_class.className() + "()\n" \
+		"\t\tlet " + str_wireframe + " = " + wireframe_class.className() + "()\n" \
+		"\n" \
+		"\t\t" + str_interactor + ".output = " + str_presenter + "\n\n" \
+		"\t\t" + str_presenter + ".interactor = " + str_interactor + "\n" \
+		"\t\t" + str_presenter + ".wireframe = " + str_wireframe + "\n\n" \
+		"\t\t" + str_wireframe + ".presenter = " + str_presenter + "\n\n" \
+		"\t\tlet module = " + load_h.className() + "()" + "\n\n" \
+		"\t\tmodule." + str_interactor + " = " + str_interactor + "\n" \
+		"\t\tmodule." + str_presenter + " = " + str_presenter + "\n" \
+		"\t\tmodule." + str_interactor + " = " + str_interactor + "\n\n" \
+		"\t}"+"\n" \
 
-		load_m = VIPERLoadModule_m(self.module_name, self.folder, load_h)
-		load_m.create()
+
+
+
+		load_h.addMethod(hardCodedMethodLoadModule)
+
+		load_h.create()
 
 
 

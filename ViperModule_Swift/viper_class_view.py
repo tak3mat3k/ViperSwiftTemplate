@@ -3,10 +3,10 @@ from viper_class_base import *
 class VIPERView_Interface(ViperClass_Interface):
 
 	def fName(self):
-		return "View_Interface.h"
+		return "ViewInterface.swift"
 
 	def cName(self):
-		return "View_Interface"
+		return "ViewInterface"
 
 	def folderPath(self):
 		return self.folder.path_module_module

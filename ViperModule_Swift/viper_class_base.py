@@ -31,8 +31,13 @@ class Property(object):
 	
 	@classmethod
 	def var(self, interface_or_class, name, optional=False):
-		optional = '?' if True else '!'
+		optional = '!'
 		return "\tvar %s:%s%s" % (name, interface_or_class, optional)
+
+	@classmethod
+	def let(self, interface_or_class, name, optional=False):
+		optional = '!'
+		return "\tlet %s:%s%s" % (name, interface_or_class, optional)
 
 	@classmethod
 	def nonatomic_weak_interface(self, interface_class):
@@ -53,7 +58,7 @@ class Property(object):
 	@classmethod
 	def nonatomic_assign_class(self, className):
 		return " var potato5 %s " % className
-		
+
 
 class ViperClass(object):
 	
@@ -66,6 +71,7 @@ class ViperClass(object):
 	array_properties = []
 	array_classes = []
 	array_protocols = []
+	array_methods = []
 
 	def __init__(self, module_name, folder, class_file=None):
 		super(ViperClass, self).__init__()
@@ -163,6 +169,13 @@ class ViperClass(object):
 		else:
 			return "" 
 
+	def methods(self):
+		if len(self.array_methods) > 0 : 
+			methods = '\n'.join([str(x) for x in self.array_methods])
+			return "\n" + methods + "\n"
+		else:
+			return ""
+
 	def addInterface(self, interface):
 		self.array_Interfaces.append(interface)
 
@@ -174,6 +187,9 @@ class ViperClass(object):
 
 	def addProperty(self, properties):
 		self.array_properties.append(properties)
+
+	def addMethod(self, method):
+		self.array_methods.append(method)
 
 	def addClass(self, className):
 		self.array_classes.append("class %s;" % className)
@@ -200,6 +216,7 @@ class ViperClass(object):
 		self.write(self.interfaces())
 		self.write(self.beginClassBody())
 		self.write(self.properties())
+		self.write(self.methods())
 		self.write(self.closeClass())
 		self.closeFile()
 
