@@ -11,22 +11,17 @@ class VIPERInteractor_Interface_Input(ViperClass_Interface):
 	def folderPath(self):
 		return self.folder.path_module_module
 
-	def closeFile(self):
-		pass
 
 class VIPERInteractor_Interface_Output(ViperClass_Interface):
+
+	def fName(self):
+		return "InteractorOutputInterface.swift"
 
 	def cName(self):
 		return "InteractorOutputInterface"
 
 	def folderPath(self):
 		return self.folder.path_module_module
-
-	def create(self):
-		self.write(self.beginClass())
-		self.write(self.interfaces())
-		self.write(self.closeClass())
-		self.closeFile()
 		
 
 class VIPERInteractor_h(ViperClass):
@@ -54,8 +49,7 @@ class VIPERInteractor(ViperClass):
  		self.interactor_Input = VIPERInteractor_Interface_Input(self.module_name, self.folder)
  		self.interactor_Input.create()
 
- 		interactor_interface_file = self.interactor_Input.class_file
- 		self.interactor_Output = VIPERInteractor_Interface_Output(self.module_name, self.folder, interactor_interface_file)
+ 		self.interactor_Output = VIPERInteractor_Interface_Output(self.module_name, self.folder)
  		self.interactor_Output.create()
 
  		self.interactor_h = VIPERInteractor_h(self.module_name, self.folder)
