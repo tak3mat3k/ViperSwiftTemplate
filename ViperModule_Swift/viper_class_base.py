@@ -121,7 +121,7 @@ class ViperClass(object):
 	def copyRight(self):
 		copyright = "//" + "\n" \
 		"// " + self.fileName() + "\n" \
-		"// Copyright (c) 2014 " + DEFAULT_COMPANY_NAME + " " + "(" + DEFAULT_COMPANY_URL  + ")" + "\n" \
+		"// Copyright (c) 2015 " + DEFAULT_COMPANY_NAME + " " + "(" + DEFAULT_COMPANY_URL  + ")" + "\n" \
 		"// Creator " + DEFAULT_CREATOR + "\n" \
 		"//" + "\n\n"
 		return copyright
