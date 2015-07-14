@@ -38,9 +38,9 @@ class VIPERLoadModule(ViperClass):
 		str_presenter = "presenter"
 		str_wireframe = "wireframe"
 
-		prt_interactor = Property.let(interactor_class.className(), str_interactor, False)
-		prt_presenter = Property.let(presenter_class.className(), str_presenter, False)
-		prt_wireframe = Property.let(wireframe_class.className(), str_wireframe, False)
+		prt_interactor = Property.var(interactor_class.className(), str_interactor, False)
+		prt_presenter = Property.var(presenter_class.className(), str_presenter, False)
+		prt_wireframe = Property.var(wireframe_class.className(), str_wireframe, False)
 
 		load_h.addProperty(prt_interactor)
 		load_h.addProperty(prt_presenter)
@@ -59,6 +59,7 @@ class VIPERLoadModule(ViperClass):
 		"\t\tmodule." + str_interactor + " = " + str_interactor + "\n" \
 		"\t\tmodule." + str_presenter + " = " + str_presenter + "\n" \
 		"\t\tmodule." + str_interactor + " = " + str_interactor + "\n\n" \
+		"\t\treturn module" + "\n" \
 		"\t}"+"\n" \
 
 
