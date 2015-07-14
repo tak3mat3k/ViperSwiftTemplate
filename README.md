@@ -33,18 +33,19 @@ It Create a Folder With the bellow Structure
    # Configurations 
    
    Inside the Folder ther are one file called **constants.py** 
-`  
-			"""
-			Constants
-			"""
-			DEFAULT_CREATOR = "Takeshi Kajino Morales"
-			DEFAULT_MODEL_PATH = ".."
-			DEFAULT_COMPANY_NAME = "Tak3mat3"
-			DEFAULT_COMPANY_URL = "https://github.com/tak3mat3k"
-			"""
-			End Constants
-			"""
-`
-   
+
+```python
+"""
+Constants
+"""
+DEFAULT_CREATOR = "Takeshi Kajino Morales"
+DEFAULT_MODEL_PATH = ".."
+DEFAULT_COMPANY_NAME = "Tak3mat3"
+DEFAULT_COMPANY_URL = "https://github.com/tak3mat3k"
+"""
+End Constants
+"""
+```
+
             
          
