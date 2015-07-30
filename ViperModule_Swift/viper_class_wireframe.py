@@ -24,7 +24,7 @@ class VIPERWireframe(ViperClass):
 
 		self.wireframe_h = VIPERWireframe_h(self.module_name, self.folder)
 
-		prt_wireframe_presenter = Property.var(viperPresenter.presenter_h.className(), "presenter")
+		prt_wireframe_presenter = Property.weakVar(viperPresenter.presenter_h.className(), "presenter")
 
 		self.wireframe_h.addProperty(prt_wireframe_presenter)
 

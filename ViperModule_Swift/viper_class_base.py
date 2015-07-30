@@ -35,6 +35,11 @@ class Property(object):
 		return "\tvar %s:%s%s" % (name, interface_or_class, optional)
 
 	@classmethod
+	def weakVar(self, interface_or_class, name, optional=False):
+		optional = '?'
+		return "\tweak var %s:%s%s" % (name, interface_or_class, optional)
+
+	@classmethod
 	def let(self, interface_or_class, name, optional=False):
 		optional = '?'
 		return "\tlet %s:%s%s" % (name, interface_or_class, optional)

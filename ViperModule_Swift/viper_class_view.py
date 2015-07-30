@@ -43,7 +43,7 @@ class VIPERView(ViperClass):
 		self.view_h.addInterface("UIViewController")
 		self.view_h.addInterface(self.view_interface.className())
 
-		prt_view_presenter = Property.var(self.viperPresenter.presenter_interface.className(), "presenter")
+		prt_view_presenter = Property.weakVar(self.viperPresenter.presenter_interface.className(), "presenter")
 		self.view_h.addProperty(prt_view_presenter)
 
 		self.view_h.create()
