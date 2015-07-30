@@ -18,6 +18,10 @@ It Create a Folder With the bellow Structure
         	- YourModuleNameInteractor.swift
     - Module
     	- YourModuleNameInteractorInputInterface.swift
+        - YourModuleNameInteractorOutputInterface.swift
+        - LanesLoadModule.swift
+        - LanesPresenterInterface.swift
+        - LanesViewInterface.swift
     - UI
     	- Presenter
         	- YourModuleNamePresenter.swift
@@ -25,7 +29,23 @@ It Create a Folder With the bellow Structure
         	- YourModuleNameViewController.swift
         - Wireframe
         	- YourModuleNameWireframe.swift
+            
+   # Configurations 
+   
+   Inside the Folder ther are one file called **constants.py** 
+
+```python
+"""
+Constants
+"""
+DEFAULT_CREATOR = "Takeshi Kajino Morales"
+DEFAULT_MODEL_PATH = ".."
+DEFAULT_COMPANY_NAME = "Tak3mat3"
+DEFAULT_COMPANY_URL = "https://github.com/tak3mat3k"
+"""
+End Constants
+"""
+```
+
+            
          
-
-
-
