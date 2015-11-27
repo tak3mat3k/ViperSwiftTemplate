@@ -12,7 +12,7 @@ class VIPERView_Interface(ViperClass_Interface):
 		return self.folder.path_module_module
 
 class VIPERView_h(ViperClass):
-	
+
 	def fName(self):
 		return "ViewController.swift"
 
@@ -30,7 +30,7 @@ class VIPERView(ViperClass):
 	viperPresenter = None
 	view_interface = None
 	view_h = None
-	
+
 	def create(self, presenter):
 
 		self.viperPresenter = presenter
@@ -43,11 +43,7 @@ class VIPERView(ViperClass):
 		self.view_h.addInterface("UIViewController")
 		self.view_h.addInterface(self.view_interface.className())
 
-		prt_view_presenter = Property.weakVar(self.viperPresenter.presenter_interface.className(), "presenter")
+		prt_view_presenter = Property.var(self.viperPresenter.presenter_interface.className(), "presenter")
 		self.view_h.addProperty(prt_view_presenter)
 
 		self.view_h.create()
-
-
-
-		

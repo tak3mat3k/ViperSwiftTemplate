@@ -1,7 +1,7 @@
 from viper_class_base import *
 
 class VIPERLoadModule_h(ViperClass):
-	
+
 	def fName(self):
 		return "LoadModule.swift"
 
@@ -13,7 +13,7 @@ class VIPERLoadModule_h(ViperClass):
 
 
 class VIPERLoadModule_m(ViperClass_Imp):
-	
+
 	def fName(self):
 		return "LoadModule.m"
 
@@ -58,7 +58,7 @@ class VIPERLoadModule(ViperClass):
 		"\t\tlet module = " + load_h.className() + "()" + "\n\n" \
 		"\t\tmodule." + str_interactor + " = " + str_interactor + "\n" \
 		"\t\tmodule." + str_presenter + " = " + str_presenter + "\n" \
-		"\t\tmodule." + str_interactor + " = " + str_interactor + "\n\n" \
+		"\t\tmodule." + str_wireframe + " = " + str_wireframe + "\n\n" \
 		"\t\treturn module" + "\n" \
 		"\t}"+"\n" \
 
@@ -68,6 +68,3 @@ class VIPERLoadModule(ViperClass):
 		load_h.addMethod(hardCodedMethodLoadModule)
 
 		load_h.create()
-
-
-

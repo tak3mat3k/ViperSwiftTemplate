@@ -12,7 +12,7 @@ class VIPERPresenter_Interface(ViperClass_Interface):
 		return self.folder.path_module_module
 
 class VIPERPresenter_h(ViperClass):
-	
+
 	def fName(self):
 		return "Presenter.swift"
 
@@ -52,7 +52,7 @@ class VIPERPresenter(ViperClass):
 			self.viperWireframe = wireframe
 
 			prt_presenter_wireframe = Property.var(self.viperWireframe.wireframe_h.className(), "wireframe")
-			prt_presenter_view_interface = Property.weakVar(self.viperWireframe.viperView.view_interface.className(), "userInterface")
+			prt_presenter_view_interface = Property.var(self.viperWireframe.viperView.view_interface.className(), "userInterface")
 
 			self.presenter_h.addProperty(prt_presenter_wireframe)
 			self.presenter_h.addProperty(prt_presenter_view_interface)
@@ -61,6 +61,3 @@ class VIPERPresenter(ViperClass):
 	def create(self):
 		self.presenter_interface.create()
 		self.presenter_h.create()
-	
-
-		
